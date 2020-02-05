@@ -9,7 +9,7 @@ public interface PlanoService {
 
     Response<Plano> cadastrar(Plano plano);
     Response<Plano> atualizar(Plano plano);
-    Response<Plano> remover(Plano plano);
+    Response<Plano> remover(Long idPlano);
     Response<List<Plano>> listarTodos();
     Response<List<Plano>> listarPorTipoEDdd(String tipo, int codigoArea);
     Response<List<Plano>> listarPorOperadoraEDdd(String operadora, int codigoArea);
