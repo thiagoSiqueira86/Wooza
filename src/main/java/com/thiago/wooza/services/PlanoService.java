@@ -1,17 +1,19 @@
 package com.thiago.wooza.services;
 
+
 import com.thiago.wooza.entities.Plano;
-import com.thiago.wooza.response.Response;
+import com.thiago.wooza.enums.PlanoTipoEnum;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface PlanoService {
 
-    Response<Plano> cadastrar(Plano plano);
-    Response<Plano> atualizar(Plano plano);
-    Response<Plano> remover(Long idPlano);
-    Response<List<Plano>> listarTodos();
-    Response<List<Plano>> listarPorTipoEDdd(String tipo, int codigoArea);
-    Response<List<Plano>> listarPorOperadoraEDdd(String operadora, int codigoArea);
-    Response<List<Plano>> listarPorCodigoEDdd(String codigoPlano, int codigoArea);
+    Plano salvar(Plano p);
+    Plano atualizar(Plano p);
+    void remover(Long idPlano);
+    List<Plano> listarTodos();
+    List<Plano> listarPorTipoDdd(PlanoTipoEnum tipo, int codigoArea);
+    List<Plano> listarPorOperadraDdd(String operadora, int codigoArea);
+    List<Plano> listarPorCodigoDdd(String codigoPlano, int codigoArea);
 }

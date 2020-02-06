@@ -1,6 +1,8 @@
 package com.thiago.wooza.entities;
 
 import com.thiago.wooza.enums.PlanoTipoEnum;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -37,10 +39,11 @@ public class Plano implements Serializable {
     @Column(name = "operadora", nullable = false, length = 10)
     private String operadora;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "plano_ddd",
                 joinColumns = {@JoinColumn(name = "fk_plano")},
                 inverseJoinColumns = {@JoinColumn(name = "fk_ddd")})
+    @Fetch(value = FetchMode.SELECT)
     private Set<DDD> ddds = new HashSet<DDD>();
 
     public Long getId() {

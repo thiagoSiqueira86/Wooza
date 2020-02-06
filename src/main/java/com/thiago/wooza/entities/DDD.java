@@ -2,7 +2,9 @@ package com.thiago.wooza.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "ddds")
@@ -14,7 +16,7 @@ public class DDD implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "codigo_area", unique = true, nullable = false)
+    @Column(name = "codigo_area", nullable = false)
     private int codigoArea;
 
     public Long getId() {
@@ -45,13 +47,5 @@ public class DDD implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id, codigoArea);
-    }
-
-    @Override
-    public String toString() {
-        return "DDD{" +
-                "id=" + id +
-                ", codigoArea=" + codigoArea +
-                '}';
     }
 }
