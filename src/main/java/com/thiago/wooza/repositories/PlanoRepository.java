@@ -1,9 +1,7 @@
-package com.thiago.wooza.repositorys;
+package com.thiago.wooza.repositories;
 
 import com.thiago.wooza.entities.Plano;
 import com.thiago.wooza.enums.PlanoTipoEnum;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

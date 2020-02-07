@@ -3,7 +3,7 @@ package com.thiago.wooza.services.impl;
 import com.thiago.wooza.entities.Plano;
 import com.thiago.wooza.enums.PlanoTipoEnum;
 import com.thiago.wooza.exceptions.RecursoNaoEncontradoException;
-import com.thiago.wooza.repositorys.PlanoRepository;
+import com.thiago.wooza.repositories.PlanoRepository;
 import com.thiago.wooza.services.PlanoService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
