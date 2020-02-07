@@ -6,6 +6,7 @@ import com.thiago.wooza.services.PlanoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -67,6 +68,7 @@ public class PlanoController {
     public ResponseEntity remover(@PathVariable("idPlano") Long idPlano){
         service.remover(idPlano);
 
-        return (ResponseEntity) ResponseEntity.noContent();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                .body("Plano removido com sucesso");
     }
 }
